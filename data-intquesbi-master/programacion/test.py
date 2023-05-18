@@ -98,3 +98,55 @@ class Profesor(Persona):
 
 
 
+
+# Ejercicio 2
+
+class Arma:
+    """
+    Clase padre de arma que heredan los otros tipos de armas
+    """
+
+    def __init__(self, tipo: str) -> None:
+        self.__type = tipo
+
+    
+    def return_arma_type(self):
+        return self.__type
+    
+    def atacar(self):
+        return f"Ataca con {self.__type}"
+    
+
+class Cuchillo(Arma):
+
+    def __init__(self) -> None:
+        super().__init__("cuchillo")
+
+
+class Revolver(Arma):
+
+    def __init__(self) -> None:
+        super().__init__("revolver")
+
+class Plasma(Arma):
+
+    def __init__(self) -> None:
+        super().__init__("plasma")
+
+
+class Jugador:
+
+    """
+    Clase jugador con nombre y arma privados que toma un arma por parámetro y en función del tipo de arma el comportamiento está seteado.
+
+    """
+
+    def __init__(self, nombre: str) -> None:
+        self.__nombre = nombre
+
+    def action(self) -> None:
+        print(self.__arma.atacar())
+
+    def set_arma(self, arma: Arma) -> None:
+        self.__arma = arma
+
