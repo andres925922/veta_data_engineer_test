@@ -71,6 +71,21 @@ CREATE TABLE USUARIOS_POLIZAS(
     FOREIGN KEY (ID_POLIZAS) REFERENCES Policies(id)
 )
 
+/**
+**7)** Número de polizas por usuario y por estado de la poliza teniendo en cuenta que puedes usar la tabla de la relación anterior
+
+*/
+
+SELECT 
+
+COUNT(P.id) AS N_POLIZA,
+P.STATUS AS P_STATUS,
+U.Name AS U_NAME
+
+FROM Policies P, USERS U
+JOIN USUARIOS_POLIZAS AS UP ON UP.ID_POLIZAS = P.id
+WHERE U.id = UP.ID_USUARIOS
+GROUP BY U.Name, P.STATUS
 
 
 
