@@ -170,7 +170,7 @@ def suma_dos(lista: list[int], numero: int):
 
     <br/>
     """
-    lista_original = lista
+
     for i in lista:
         lista_comprobar = [x for x in lista if x != i]
         print(lista_comprobar, i)
