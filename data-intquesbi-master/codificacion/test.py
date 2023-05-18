@@ -1,32 +1,5 @@
 ## Codificación
 
-"""
-## Codificación
-
-
-
-
-
-
-**6) Suma dos**. Dado un array y un número N retorna true si hay números A y B tal que A + B = N. Sino retorna fallo
-
-* `[1, 2, 3, 4], 5` ⇒ `True`
-* `[3, 4, 6], 6` ⇒ `False`
-
-<br/>
-
-
-**7) Intersection**. Devuelve la intersección de dos listas
-
-* `[1, 2, 4, 6, 10], [2, 4, 5, 7, 10]` ⇒ `[2, 4, 10]`
-
-
-
-
-"""
-
-
-
 def imprime_caracter_si_es_multiplo(caracter:int):
     """
 
@@ -54,6 +27,8 @@ def imprime_caracter_si_es_multiplo(caracter:int):
 
 values = [x for x in range(101) if x > 0]
 
+# test
+# descomentar para ejecutar.
 # for i in values:
 #     print(imprime_caracter_si_es_multiplo(i))
 
@@ -77,6 +52,8 @@ def funcion_factorial(numero:int):
 
     return factorial
 
+# test
+# descomentar para ejecutar.
 # print(funcion_factorial(4))
 
 
@@ -96,7 +73,8 @@ def avg(lista: list[int]):
 
     return int(suma/len(lista))
 
-
+# test
+# descomentar para ejecutar.
 # print(avg([4, 36, 45, 50, 75]))
 
 
@@ -119,6 +97,7 @@ def devolver_lista_sin_duplicados(lista: list[int]) -> list:
     return lista_sin_duplicados
 
 # test
+# descomentar para ejecutar.
 # print(devolver_lista_sin_duplicados([1, 2, 3, 2]))
 # print(devolver_lista_sin_duplicados([1, 2, 2, 1, 5, 3, 2, 1, 4]))
 
@@ -137,27 +116,35 @@ def cuenta_duplicados(lista: list[int]):
     <br/>
     """
 
-    valores_unicos = []
-    valores_duplicados = [x for i, x in enumerate(lista) if i != lista.index(x)]
+    # valores_unicos = []
+    # valores_duplicados = [x for i, x in enumerate(lista) if i != lista.index(x)]
     conteo = {}
 
-    # lista de valores únicos
-    for i in lista:
-        if i not in valores_unicos:
-            valores_unicos.append(i)
+    # # lista de valores únicos
+    # for i in lista:
+    #     if i not in valores_unicos:
+    #         valores_unicos.append(i)
 
-    # Inicializamos el contador.
-    for x in valores_unicos:
-        conteo[x] = 1
+    # # Inicializamos el contador.
+    # for x in valores_unicos:
+    #     conteo[x] = 1
 
-    # Establecmos las sumas.
-    for j in valores_duplicados:
-        for i in lista:
-            conteo[j] += 1
+    # # Establecmos las sumas.
+    # for j in valores_duplicados:
+    #     for i in lista:
+    #         conteo[j] += 1
 
-    print(conteo, valores_duplicados)
+    # print(conteo, valores_duplicados)
 
-# cuenta_duplicados([1, 3, 2, 1, 5, 3, 5, 1, 4])
+    for i in lista: 
+        conteo[i] = lista.count(i)
+
+    return conteo
+
+
+# test
+# descomentar para ejecutar.
+print(cuenta_duplicados([1, 3, 2, 1, 5, 3, 5, 1, 4]))
 
 
 def suma_dos(lista: list[int], numero: int):
@@ -180,6 +167,25 @@ def suma_dos(lista: list[int], numero: int):
             
     return False
         
+# test
+# descomentar para ejecutar.
+# print(suma_dos([1, 2, 3, 4], 16))
 
-print(suma_dos([1, 2, 3, 4], 16))
+
+def interseccion(lista_1: list[int], lista_2: list[int]) -> list:
+
+    """
+    **7) Intersection**. Devuelve la intersección de dos listas
+
+    * `[1, 2, 4, 6, 10], [2, 4, 5, 7, 10]` ⇒ `[2, 4, 10]`
+    """
+    
+    A = set(lista_1)
+    B = set(lista_2)
+
+    return [x for x in (A & B)]
+
+# test
+# descomentar para ejecutar.
+# print(interseccion([1, 2, 4, 6, 10], [2, 4, 5, 7, 10]))
         
