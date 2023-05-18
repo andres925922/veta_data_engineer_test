@@ -173,12 +173,13 @@ def suma_dos(lista: list[int], numero: int):
     lista_original = lista
     for i in lista:
         lista_comprobar = [x for x in lista if x != i]
+        print(lista_comprobar, i)
         for j in lista_comprobar:
             if j + i == numero:
                 return True
             
-            return False
+    return False
         
 
-print(suma_dos([1, 2, 3, 4], 5))
+print(suma_dos([1, 2, 3, 4], 16))
         
